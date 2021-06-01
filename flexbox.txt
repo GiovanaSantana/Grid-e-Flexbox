@@ -1,0 +1,36 @@
+display:flex; 
+flex-direction - define a direção dos itens
+row;row-reverse;column;column-reverse
+
+flex-wrap - define se os itens terão quebra de linha ou não
+nowrap;wrap;wrap-reverse
+
+flex-flow - forma resumida de definir o flex-direcction e o flex-wrap
+flex-flow: direction e wrap;
+parte 1 - row;row-reverse;column;column-reverse
+parte 2 - nowrap;wrap;wrap-reverse
+
+justify-content - serve para fazer um alinhamento horizontal
+flex-start - alinha os itens da esquerda pra direita;flex-end - alinha da direita pra esquerda;center - alinha ao centro; space-between - cria um espaço entre os itens;space-around - espaçamento entre os itens e as estremidades do container
+
+align-items - responsavel por fazer um alinhamento vertical
+stretch - define q os itens cresçam igualmente; flex-start - alinha os elementos no topo; flex-end - alinha os itens na base do container;center - alinha ao centro;baseline - faz um alinhamento vertical baseado no conteudo de cada item do container
+
+align-content - faz um alinhamento vertical quando os itens tem uma quebra de linha (wrap)
+flex-start - faz o alinhamento vertical dos itens msm com a quebra de linha;flex-end - faz o alinhamento na base do container msm com a quebra de linha; center - alinha no centro msm com a quebra de linha; space-between - faz o espaçamento entre as linhas msm com a quebra de linha; space-around - adiciona espaço entre os itens na vertical e tambem no topo e na base do container; stretch - faz com oq os itens cresçam igualmente na vertical
+
+flex-grow - Define como o item vai mudar de tamanho de acordo com o container (obs:tudo depende do flex-grow que você definiu para os outros itens. obs: justif-content não faz diferença alguma com flex-grow pois ele ocupa todo o espaço disponivel)
+flex-grow:0; - é o padrão portanto os itens ficarão do tamanho já definido de acordo com seu conteudo; flex-grow:1; - aumenta o maximo de seu tamanho respeitando os outros itens do container; flex-grow:2; - o mesmo que o primeiro mas caso você tenha definido os outros itens com flex-grow 1, ele vai acabar ocupando ainda mais espaço que os outros;flex-grow:vai aumentando;
+
+flex-shrink - indica se o elemento poderá ser reduzido ou não para caber no container (obs:depende de outras propriedades do container pra funcionar. obs:os itens só seguem o tamanho do container, ignorando o width.obs:quanto maior o valor do flex-shrink maior a capacidade do item se adaptar e reduzir ao espaço disponivel)
+flex-shrink:1; - valor padrão, reduz ao espaço disponivel da flexbox se adaptando;flex-shrink:0; - não permite que ele se adapte ao tamanho do container o deixando do tamanho já definido antes;flex-shrink:2; -
+
+flex - Atalho para as propriedades flex-grow, flex-shrink e flex-basis respectivamente
+
+
+
+
+
+
+
+background-color: rgb(175, 255, 138); - cor verde

@@ -1,0 +1,115 @@
+Referente ao container
+display:grid; - para que o container seja identificado como um grid
+------------------------------------------------------------
+grid-template-columns - para indicar ao container grid em quantas colunas ele vai ser separado. se utiliza fr(Fraçoes) para indicar o tamanho das colunas
+ex:grid-template-columns:3fr 1fr; - ficará separado em 2 colunas e a primeira tem tamanho de 3 frações
+
+grid-template-rows - para indicar ao container grid em quantas linhas ele vai ser separado. Aqui a linha você indica por altura(propriedades de height:vh,px,%), então você indica qual o tamanho de cada linha
+ex:grid-template-rows:20vh 70vh 10vh;
+------------------------------------------------------------
+grid-gap - dá espaços entre os elementos do container. grid-gap é uma abreviação de grid-column-gap,grid-row-gap
+ex:grid-gap:20px; - dá um espaçamento entre os itens de 20px tanto nas colunas quanto nas linhas
+ex2: grid-gap:20px 50px; - o primeiro se refere a linha e o segundo se refere a coluna
+
+grid-column-gap - se refere ao espaçamento entre as colunas
+
+grid-row-gap - se refere ao espaçamento entre as linhas
+
+------------------------------------------------------------
+------------------------------------------------------------
+*Tudo abaixo é referente aos itens do container*
+------------------------------------------------------------
+
+grid-template-areas - simplifica o grid-column e o grid-row
+Primeiramente no container você insere 
+grid-template-areas: "h h"
+		     "m a"
+                     "f f"
+(obs:caso n queira q o item ocupe todas as colunas apenas colocar um . 
+ex: "h h"
+    "m a"
+    "f .")
+ao observar pode parecer confuso porém é mais obvio do que parece. h h se refere a linha 1, o primeiro h se refere a coluna 1 e o segundo h se refere a coluna 2 e isso se aplica as outra letras sendo m a referentes a linha 3. Aí você deve colocar o nome que quiser para se referenciar aos itens, para conseguir identifica-los apenas é necessário inserir:
+grid-area:NomeQueVoceEscolheuParaOItem
+ex:
+.item1{
+grid-area:h;
+}
+.item2{
+grid-area:m;
+}
+.item3{
+grid-area:a;
+}
+.item4{
+grid-area:f;
+}
+
+ficará da seguinte forma:
+ ------------------------- 
+|                        |
+|         item 1         |
+|------------------------|
+|            |           |
+|  item 2    | item 3    |
+|------------------------|
+|                        |
+|         item 4         |
+ ------------------------- 
+------------------------------------------------------------
+grid-column - se refere a qual coluna você quer que comece e termine o item. é importante ressaltar que se deve contar essa parte da seguinte forma
+coluna 1         coluna 3
+ ------------------------- 
+|            |           |
+|  item 1    |  item 2   |
+|------------------------|
+|            |           |
+|  item 3    | item 4    |
+|------------------------|
+|            |           |
+|            |           |
+ ------------------------- 
+          coluna 2
+
+mesmo que haja apenas 2 colunas se conta a partir da primeira linha vertical:
+grid-column-start:1;
+grid-column-end:3;
+ou 
+grid-column:1/3;
+Com isso nesse exemplo estamos indicando que o item que estamos falando vai ocupar todo o espaço disponivel em colunas
+
+coluna 1         coluna 3
+ ------------------------- 
+|                        |
+|         item 1         |
+|------------------------|
+|            |           |
+|  item 2    | item 3    |
+|------------------------|
+|            |           |
+|  item 4    |           |
+ ------------------------- 
+          coluna 2
+------------------------------------------------------------
+grid-row - se refere a qual linha você quer que comece e termine o item. é importante ressaltar que se deve contar essa parte da seguinte forma
+
+ ------------------------linha 1
+|            |           |
+|  item 1    |  item 2   |
+|------------------------|linha 2
+|            |           |
+|  item 3    | item 4    |
+|------------------------|linha 3
+|            |           |
+|            |           |
+ ------------------------linha 4
+
+então se eu quiser q o item 1 vá para a linha 3 então:
+grid-row-start:3;
+grid-row-end:4;
+ou 
+grid-row:3/4;
+------------------------------------------------------------
+grid-area
+
+------------------------------------------------------------
